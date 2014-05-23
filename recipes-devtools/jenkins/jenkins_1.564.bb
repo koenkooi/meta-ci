@@ -6,8 +6,8 @@ LIC_FILES_CHKSUM = "file://${COREBASE}/LICENSE;md5=3f40d7994397109285ec7b81fdeb3
 SRC_URI = "http://mirrors.jenkins-ci.org/war/${PV}/jenkins.war \
            file://jenkins-server.service \
           "
-SRC_URI[md5sum] = "47900d167b1579bc1fa70d88dc529aa8"
-SRC_URI[sha256sum] = "d3719d0614b924ad6037fc24155c19580df80c099cec66cf41827f5c324bca96"
+SRC_URI[md5sum] = "12b2f105ff9a423fa18881b3758d68f4"
+SRC_URI[sha256sum] = "7db7241a62382602f9cfc8a8977cf6ca0c02e7ea9470f5bf09ee1ec927ca9c4f"
 
 inherit allarch systemd useradd
 
