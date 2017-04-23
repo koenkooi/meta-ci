@@ -4,7 +4,7 @@ After=syslog.target
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/java -jar /usr/share/jenkins/jenkins.war
+ExecStart=/usr/bin/java -jar /usr/share/jenkins/jenkins.war -Djava.awt.headless=true
 User=jenkins
 
 [Install]

@@ -34,4 +34,8 @@ SYSTEMD_PACKAGES = "${PN}-server"
 SYSTEMD_SERVICE_jenkins-server = "jenkins-server.service"
 
 # From the debian packages, not sure about psmisc.
-RDEPENDS_jenkins-server = "openjre-8 procps file psmisc jenkins-common"
+RDEPENDS_jenkins-server = "openjre-8 \
+                           procps file psmisc \
+                           jenkins-common \
+                           ttf-dejavu-sans \
+                          "
