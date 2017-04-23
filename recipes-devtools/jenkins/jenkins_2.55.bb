@@ -1,13 +1,14 @@
 SUMMARY = "Continuous Integration and Job Scheduling Server"
 
 LICENSE = "MIT & Apache-2.0"
-LIC_FILES_CHKSUM = "file://${COREBASE}/LICENSE;md5=3f40d7994397109285ec7b81fdeb3b58"
+LIC_FILES_CHKSUM = "file://${COREBASE}/LICENSE;md5=4d92cd373abda3937c2bc47fbc49d690"
 
-SRC_URI = "http://mirrors.jenkins-ci.org/war/${PV}/jenkins.war \
+
+SRC_URI = "http://updates.jenkins-ci.org/download/war/${PV}/jenkins.war \
            file://jenkins-server.service \
           "
-SRC_URI[md5sum] = "12b2f105ff9a423fa18881b3758d68f4"
-SRC_URI[sha256sum] = "7db7241a62382602f9cfc8a8977cf6ca0c02e7ea9470f5bf09ee1ec927ca9c4f"
+SRC_URI[md5sum] = "d73506299f91a622100ec72f830e7fe4"
+SRC_URI[sha256sum] = "e77ec19793765892202679824ffef97dcd5bc4856e24ce695bd6a983b4d543d7"
 
 inherit allarch systemd useradd
 
@@ -33,4 +34,4 @@ SYSTEMD_PACKAGES = "${PN}-server"
 SYSTEMD_SERVICE_jenkins-server = "jenkins-server.service"
 
 # From the debian packages, not sure about psmisc.
-RDEPENDS_jenkins-server = "openjdk-7-jre procps file psmisc jenkins-common"
+RDEPENDS_jenkins-server = "openjre-8 procps file psmisc jenkins-common"
