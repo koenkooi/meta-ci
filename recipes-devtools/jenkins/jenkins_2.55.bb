@@ -27,6 +27,11 @@ FILES_jenkins-common = "${datadir}/jenkins/jenkins.war"
 PACKAGES =+ "jenkins-server" 
 FILES_jenkins-server = "${systemd_unitdir}"
 
+# FIXME: http://jenkins-ci.361315.n4.nabble.com/Using-UNIX-PAM-authentication-from-a-non-root-user-tp378559p378563.html
+# 1) add jenkins to 'shadow' group
+# 2) chown root.shadow /etc/shadow*
+# 3) chmod g+r /etc/shadow*
+
 USERADD_PACKAGES = "${PN}-server"
 USERADD_PARAM_${PN}-server = "--system --create-home --home-dir ${localstatedir}/lib/jenkins jenkins"
 
@@ -39,3 +44,6 @@ RDEPENDS_jenkins-server = "openjre-8 \
                            jenkins-common \
                            ttf-dejavu-sans \
                           "
+
+# For unix user auth
+RRECOMMENDS_jenkins-server = "openssh-sshd"
